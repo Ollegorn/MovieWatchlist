@@ -1,0 +1,49 @@
+
+body{
+  color: white;
+  margin: 0;
+}
+
+
+
+
+
+.top-section{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+  background-image: url("./images/Movie.jpg");
+  background-size: cover;
+  background-position: 0px;
+  height: 250px;
+  width: 550px;
+  position: relative;
+}
+
+.top-section a{
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  text-shadow: 0 0 5px black;
+}
+
+.top-container {
+  position: absolute;
+  bottom: 0;
+  left: 1;
+  right: 1;
+}
+
+.form {
+  margin-bottom: -10px;
+}
+
+#movie-search{
+  width: 300px;
+  height: 30px;
+}
+.form button{
+  height: 30px;
+}
