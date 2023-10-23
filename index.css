@@ -60,6 +60,10 @@ body{
 .movie{
   margin: 10px auto;
   display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid gray;
 }
 
 .movie img{
@@ -74,4 +78,15 @@ body{
   margin: 200px auto;
   color: gray;
   gap: 10px;
+}
+
+.movie-comp{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.movie-details h4, .movie-details p{
+  margin:5px;
 }
