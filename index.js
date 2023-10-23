@@ -3,12 +3,10 @@
 
 document.getElementById("submit").addEventListener("click", async function (event) {
   event.preventDefault();
-
   const searchQuery = document.getElementById("movie-search").value;
-  const url = `http://www.omdbapi.com/?s=${searchQuery}&apikey=b9dda53d`;
 
-  const response = await fetch(url);
-   const data = await response.json();
+  const response = await fetch(`http://www.omdbapi.com/?s=${searchQuery}&apikey=b9dda53d`);
+  const data = await response.json();
 
   if (data.Response === "False") {
     document.getElementById("bottom-section").innerHTML = `<h2>${data.Error}</h2>`;
@@ -16,13 +14,10 @@ document.getElementById("submit").addEventListener("click", async function (even
   else{
     const movieArray = data.Search.slice(0, 3);
 
-    if (Array.isArray(movieArray)) 
-    {
+   
     const movieDetailsPromises = movieArray.map(async (movie) => {
-      const imdbID = movie.imdbID;
-      const movieDetailsUrl = `http://www.omdbapi.com/?i=${imdbID}&apikey=b9dda53d`;
 
-      const movieDetailsResponse = await fetch(movieDetailsUrl);
+      const movieDetailsResponse = await fetch(`http://www.omdbapi.com/?i=${movie.imdbID}&apikey=b9dda53d`);
       const movieDetailsData = await movieDetailsResponse.json();
 
       return movieDetailsData;
@@ -52,5 +47,4 @@ document.getElementById("submit").addEventListener("click", async function (even
     document.getElementById("bottom-section").innerHTML = movieDetailsHTML;
     console.log(movieDetails);
     }
-  }
 });
