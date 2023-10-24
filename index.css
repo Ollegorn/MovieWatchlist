@@ -22,12 +22,16 @@ body{
   position: relative;
 }
 
-.top-section a{
+.top-section a, .add-movie-to-watchlist a{
   color: white;
   text-decoration: none;
   font-weight: bold;
   font-size: 18px;
   text-shadow: 0 0 5px black;
+}
+
+.top-section a:hover, .add-movie-to-watchlist a:hover{
+  color:bisque;
 }
 
 .top-container {
@@ -89,4 +93,39 @@ body{
 
 .movie-details h4, .movie-details p{
   margin:5px;
+}
+
+.watchlist{
+  background-color: black;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.watchlist:hover{
+  color: bisque;
+}
+
+.add-movie-to-watchlist{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+}
+
+.movie-plot {
+  overflow: hidden;
+  max-height: 100px; /* Adjust the value as needed */
+  position: relative;
+}
+
+.show-more {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
 }
